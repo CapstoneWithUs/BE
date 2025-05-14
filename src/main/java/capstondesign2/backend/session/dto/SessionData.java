@@ -1,13 +1,18 @@
 package capstondesign2.backend.session.dto;
 
 import capstondesign2.backend.session.FocusGrade;
-import lombok.Getter;
-import lombok.Setter;
+import capstondesign2.backend.session.dto.scoreDTO.FocusScorePointDTO;
+import capstondesign2.backend.session.dto.scoreDTO.PostSessionDataDTO;
+import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 // 메인 정보를 담은 DTO
 public class SessionData {
     // 세션 기본 정보(현재는 적용 X)
@@ -27,21 +32,9 @@ public class SessionData {
 
     private GradeArray gradeArray;
 
-    public SessionData() {
+    private PostSessionDataDTO postSessionData;
 
-    }
-
-    public SessionData(LocalDateTime startTime, LocalDateTime endTime, Long studyTimeMs, Long sleepTimeMs) {
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.studyTimeMs = studyTimeMs;
-        this.sleepTimeMs = sleepTimeMs;
-    }
-
-    public SessionData(Long studyTimeMs, Long sleepTimeMs) {
-        this.studyTimeMs = studyTimeMs;
-        this.sleepTimeMs = sleepTimeMs;
-    }
+    private List<FocusScorePointDTO> focusScoreList;
 
     // 눈 깜빡임 통계
     private BlinkStatsDTO blinkStats;

@@ -1,1 +1,9 @@
-spring.application.name=backend
+spring:
+  mvc:
+    converters:
+      preferred-json-mapper: jackson
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true

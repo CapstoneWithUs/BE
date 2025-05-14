@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface SessionDataService {
 
-    void setFocusGrade(SessionData sessionData);
+    void setFocusGrade(SessionData sessionData, Double focusScore);
 
 }

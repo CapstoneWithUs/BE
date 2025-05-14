@@ -6,12 +6,12 @@ import capstondesign2.backend.session.dto.SessionData;
 public class SessionDataServiceImpl implements SessionDataService {
 
     @Override
-    public void setFocusGrade(SessionData sessionData) {
-        if (sessionData.getStudyTimeMs() >= 90) {
+    public void setFocusGrade(SessionData sessionData, Double focusScore) {
+        if (focusScore >= 90) {
             sessionData.setFocusGrade(FocusGrade.A);
-        } else if (sessionData.getStudyTimeMs() >= 80) {
+        } else if (focusScore >= 80) {
             sessionData.setFocusGrade(FocusGrade.B);
-        } else if (sessionData.getStudyTimeMs() >= 70) {
+        } else if (focusScore >= 70) {
             sessionData.setFocusGrade(FocusGrade.C);
         } else{
             sessionData.setFocusGrade(FocusGrade.D);
