@@ -2,6 +2,7 @@ package capstondesign2.backend.statistics.attentionState.controller;
 
 import capstondesign2.backend.statistics.attentionState.dto.AttentionStateRequestDTO;
 import capstondesign2.backend.statistics.attentionState.dto.AttentionStateResponseDTO;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +20,10 @@ public class AttentionStateController {
         attentionStateResponseDTO.setGazeAwayTimeMs(attentionStateRequestDTO.getGazeAwayTimeMs());
 
         System.out.println("집중 상태 시간 입력 완료: " + attentionStateResponseDTO);
+    }
+
+    @GetMapping("/get-attention-state")
+    public AttentionStateResponseDTO getAttentionState() {
+        return attentionStateResponseDTO;
     }
 }

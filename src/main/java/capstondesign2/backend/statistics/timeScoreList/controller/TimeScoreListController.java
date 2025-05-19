@@ -2,6 +2,7 @@ package capstondesign2.backend.statistics.timeScoreList.controller;
 
 import capstondesign2.backend.statistics.timeScoreList.dto.TimeScoreRequestDTO;
 import capstondesign2.backend.statistics.timeScoreList.dto.TimeScoreResponseDTO;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,10 @@ public class TimeScoreListController {
         System.out.println("<시간, 점수> 배열 입력 완료: " + timeScoreResponseDTO);
     }
 
+    @GetMapping("/time-score-list/get-time-score-list")
+    public TimeScoreResponseDTO getTimeScoreList() {
+        return timeScoreResponseDTO;
+    }
 
 
 }
