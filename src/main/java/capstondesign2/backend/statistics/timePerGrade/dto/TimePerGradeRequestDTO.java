@@ -5,7 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class TimePerGradeDTO {
+// FE -> BE
+public class TimePerGradeRequestDTO {
     private Double gradeATime;
     private Double gradeBTime;
     private Double gradeCTime;

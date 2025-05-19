@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AttentionStateDTO {
+public class AttentionStateResponseDTO {
     private Double gazeAwayTimeMs;   // 다른 곳 응시
     private Double absenceTimeMs;  // 자리 이탈
     private Double sleepTimeMs;  // 졸음

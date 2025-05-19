@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class EdgeTimeDTO {
+public class EdgeTimeResponseDTO {
     private Double startTime;
     private Double endTime;
 }

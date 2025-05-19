@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class FocusScoreDTO {
-    private int focusScore;
+public class FocusScoreRequestDTO {
+    private Double focusScore;
 }
