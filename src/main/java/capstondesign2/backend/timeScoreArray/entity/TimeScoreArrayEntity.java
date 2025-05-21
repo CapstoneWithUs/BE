@@ -10,6 +10,6 @@ import lombok.Setter;
 @Setter
 public class TimeScoreArrayEntity {
     @Id
-    private Double eachTime;
-    private Long eachScore;
+    private long eachTime;
+    private double eachScore;
 }

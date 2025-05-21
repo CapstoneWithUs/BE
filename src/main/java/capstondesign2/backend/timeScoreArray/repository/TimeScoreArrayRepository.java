@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TimeScoreArrayRepository extends JpaRepository<TimeScoreArrayEntity, Double> {
+public interface TimeScoreArrayRepository extends JpaRepository<TimeScoreArrayEntity, Long> {
 }

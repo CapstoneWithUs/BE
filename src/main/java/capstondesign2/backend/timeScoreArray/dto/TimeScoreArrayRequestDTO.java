@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TimeScoreArrayRequestDTO {
-    private Double eachTime;
-    private Long eachScore;
+    private long eachTime;
+    private double eachScore;
 }

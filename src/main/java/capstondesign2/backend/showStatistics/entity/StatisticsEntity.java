@@ -11,20 +11,20 @@ import lombok.Setter;
 @Getter
 @Setter
 public class StatisticsEntity {
-    private Double gradeATime;
-    private Double gradeBTime;
-    private Double gradeCTime;
-    private Double gradeDTime;
+    private double gradeATime;
+    private double gradeBTime;
+    private double gradeCTime;
+    private double gradeDTime;
 
-    private Double sleepTime;
-    private Double gazeAwayTime;
-    private Double absenceTime;
+    private double sleepTime;
+    private double gazeAwayTime;
+    private double absenceTime;
 
-    private Long focusScore;
+    private double focusScore;
 
     @Id
-    private Double startTime;
-    private Double endTime;
+    private long startTime;
+    private long endTime;
 
     private String subjectName;
 
