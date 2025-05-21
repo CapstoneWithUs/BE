@@ -1,16 +1,11 @@
-package capstondesign2.backend.showStatistics.entity;
+package capstondesign2.backend.showStatistics.dto;
 
-import capstondesign2.backend.entity.BaseEntity;
-import capstondesign2.backend.showStatistics.dto.StatisticsRequestDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
-public class StatisticsEntity {
+public class StatisticsResponseDTO {
     private double gradeATime;
     private double gradeBTime;
     private double gradeCTime;
@@ -22,14 +17,8 @@ public class StatisticsEntity {
 
     private long focusScore;
 
-    @Id
     private long startTime;
     private long endTime;
 
     private String subjectName;
-
-    public StatisticsEntity() {
-
-    }
-
 }
