@@ -29,7 +29,7 @@ public class TimeScoreArrayController {
         return ResponseEntity.ok("Time-Score Array data saved successfully.");
     }
 
-    @GetMapping("/get-time-score-array-data")
+    @GetMapping("/get-all-time-score-array-data")
     public ResponseEntity<List<TimeScoreArrayResponseDTO>> getTimeScoreArrayData() {
 
         try {
