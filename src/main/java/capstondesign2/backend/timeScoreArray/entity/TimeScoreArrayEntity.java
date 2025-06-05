@@ -12,4 +12,5 @@ public class TimeScoreArrayEntity {
     @Id
     private long eachTime;
     private double eachScore;
+    private String subjectName;
 }

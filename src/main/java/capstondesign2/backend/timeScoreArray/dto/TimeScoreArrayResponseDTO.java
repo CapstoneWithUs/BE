@@ -8,4 +8,5 @@ import lombok.Setter;
 public class TimeScoreArrayResponseDTO {
     private long eachTime;
     private double eachScore;
+    private String subjectName;
 }

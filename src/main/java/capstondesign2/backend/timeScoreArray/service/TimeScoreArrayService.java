@@ -12,4 +12,5 @@ public interface TimeScoreArrayService {
     void saveTimeScoreArrayData(TimeScoreArrayRequestDTO requestDTO);
 
     List<TimeScoreArrayResponseDTO> getAllTimeScoreArrayData();
+    List<TimeScoreArrayResponseDTO> getTimeScoreArrayDataBySubjectNameBetweenStartTimeAndEndTime(String subjectName, long startTime, long endTime);
 }
