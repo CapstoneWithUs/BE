@@ -6,10 +6,7 @@ import capstondesign2.backend.timeScoreArray.service.TimeScoreArrayService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +24,21 @@ public class TimeScoreArrayController {
         System.out.println("Time-Score Array data saved.");
 
         return ResponseEntity.ok("Time-Score Array data saved successfully.");
+    }
+
+    @GetMapping("/get-time-score-array-data-by-subject-name-and-each-time-and-each-score")
+    public ResponseEntity<List<TimeScoreArrayResponseDTO>> getTimeScoreArrayDataBySubjectNameAndEachTimeAndEachScore(
+            @RequestParam String subjectName,
+            @RequestParam long startTime,
+            @RequestParam long endTime) {
+
+        List<TimeScoreArrayResponseDTO> responseList = timeScoreArrayService.getTimeScoreArrayDataBySubjectNameBetweenStartTimeAndEndTime(subjectName, startTime, endTime);
+
+        if (responseList.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        return ResponseEntity.ok(responseList);
     }
 
     @GetMapping("/get-all-time-score-array-data")

@@ -7,10 +7,7 @@ import capstondesign2.backend.showStatistics.service.StatisticsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +46,28 @@ public class StatisticsController {
             // 에러 발생시 빈 리스트 반환 또는 예외 처리
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ArrayList<>());
         }
+    }
 
+    @GetMapping("/get-all-by-subject-name-and-time-range")
+    public ResponseEntity<List<StatisticsResponseDTO>> getStatisticsBySubjectAndTimeRange(
+            @RequestParam String subjectName,
+            @RequestParam long startTime,
+            @RequestParam long endTime) {
+
+        try {
+            if(subjectName.equals("ALL")) {
+                // 과목명이 "ALL"인 경우 모든 통계 데이터를 반환
+                List<StatisticsResponseDTO> statisticsList = statisticsService.getStatisticsForTimeRange(startTime, endTime);
+                return ResponseEntity.ok(statisticsList);
+            }
+
+
+            List<StatisticsResponseDTO> statisticsList = statisticsService.getStatisticsBySubjectAndTimeRange(subjectName, startTime, endTime);
+            return ResponseEntity.ok(statisticsList);
+        } catch (Exception e) {
+            // 에러 발생시 빈 리스트 반환 또는 예외 처리
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ArrayList<>());
+        }
     }
 
 
