@@ -17,10 +17,11 @@ public class TimeScoreArrayServiceImpl implements TimeScoreArrayService {
         this.timeScoreArrayRepository = timeScoreArrayRepository;
     }
 
-    TimeScoreArrayEntity timeScoreArrayEntity = new TimeScoreArrayEntity();
-
     @Override
     public void saveTimeScoreArrayData(TimeScoreArrayRequestDTO requestDTO) {
+
+        TimeScoreArrayEntity timeScoreArrayEntity = new TimeScoreArrayEntity();
+
 
         timeScoreArrayEntity.setEachTime(requestDTO.getEachTime());
         timeScoreArrayEntity.setEachScore(requestDTO.getEachScore());
