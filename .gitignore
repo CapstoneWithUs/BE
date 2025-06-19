@@ -35,3 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# AWS 키
+*.pem
+
+# Spring 설정 파일
+src/main/resources/application.yml
