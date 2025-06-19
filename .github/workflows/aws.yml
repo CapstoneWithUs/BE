@@ -65,5 +65,5 @@ jobs:
             sudo docker rm -f pocusmate-container || true
 
             # 새 컨테이너 실행
-            sudo docker pull ***/pocusmate:latest
-            sudo docker run --name pocusmate-container -d -p 80:8080 -e TZ=Asia/Seoul ***/pocusmate:latest
+            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/pocusmate:latest
+            sudo docker run --name pocusmate-container -d -p 80:8080 -e TZ=Asia/Seoul ${{ env.DOCKER_IMAGE_NAME }}:latest
